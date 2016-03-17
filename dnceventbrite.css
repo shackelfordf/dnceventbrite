@@ -1,0 +1,22 @@
+img {
+	padding-top: 40px;
+	width:15%;
+	height:15%;	
+	padding-bottom: 40px;
+}
+
+#companylogo {
+	text-align: center;
+}
+
+p {
+	text-align: center;
+	font-family: Helvetica;
+	font-size: 20px;
+	padding-bottom: 40px;
+}
+
+.btn-primary{
+	background: #E31818;
+	color: #ffffff;
+}
