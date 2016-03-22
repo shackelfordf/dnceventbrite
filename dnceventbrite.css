@@ -9,6 +9,11 @@ img {
 	text-align: center;
 }
 
+#addsymbol {
+	width: 15%;
+	height: 15%;
+}
+
 p {
 	text-align: center;
 	font-family: Helvetica;
