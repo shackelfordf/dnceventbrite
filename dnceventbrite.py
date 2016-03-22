@@ -5,11 +5,14 @@ eventbrite = Eventbrite ('F7T2P7A27KSJCPDD6RHL')
 eventName = eventbrite.get_event()
 print (eventName['multipart-text']) 
 
-eventDate = eventbrite.get_event()
-print (eventName['datetime-tz']) 
-
 eventOrganizer = eventbrite.get_event()
 print (eventOrganizer['organizer']) 
+
+eventUrl = eventbrite.get_event()
+print (eventUrl ['url'])
+
+eventDate = eventbrite.get_event()
+print (eventName['datetime-tz']) 
 
 eventLocation = eventbrite.get_venue()
 print (eventLocation['address'])
@@ -17,23 +20,25 @@ print (eventLocation['address'])
 
 
 
+
+
 #attendee details 
-attendeeFirstName =  eventbrite.get_attendeeFirstName()
+attendeeFirstName =  eventbrite.get_attendee()
 print (attendeeFirstName['first_name'])
 
-attendeeLastName =  eventbrite.get_attendeeLastName()
-print (attendeeFirstName['last_name'])
+attendeeLastName =  eventbrite.get_attendee()
+print (attendeeLastName['last_name'])
 
-attendeeEmail = eventbrite.get_attendeeEmail()
+attendeeEmail = eventbrite.get_attendee()
 print (attendeeFirstName['email'])
 
-attendeePhone = eventbrit.get_attendeePhone()
+attendeePhone = eventbrite.get_attendee()
 print (attendeePhone['cell_phone'])
 
-attendeeAddress = eventbrite.get_attendeeAddress()
+attendeeAddress = eventbrite.get_attendee()
 print (attendeeAddress['address'])
 
-attendeeEvent = eventbrite.get_attendeeEvent()
+attendeeEvent = eventbrite.get_attendee()
 print (attendeeEvent['event_id'])
 
 
