@@ -4,29 +4,33 @@ eventbrite = Eventbrite ('BGRKOZMNI6NQRUNPD6BZ')
 
 #event details
 
-user = eventbrite.get_user()					#name of the eventbrite user 
-print user
+user = eventbrite.get_user()						#name of the eventbrite user 
+#print user
 
 userId = user['id']
-print userId
+#print userId
 
 userEvents = '/users/'+ userId + '/owned_events/'
-print userEvents
+#print userEvents
 
 print eventbrite.get(userEvents)
 
 
-eventName = userEvents['multipart-text'] 		#event name
+eventName = userEvents['multipart-text'] 			#event name
 
-eventDate = eventbrite['datetime-tz']			#event time 
+eventOrganizer = userEvents['organizer']			#organizer of the event
 
-eventOrganizer = userEvents['organizer']		#organizer of the event
+eventUrl = userEvents['url']						#event posting url 
 
-eventUrl = eventbrite['url']					#event posting url 
+eventDate = userEvents['datetime-tz']				#event time 
+
+eventOrganizer = userEvents['organizer']			#organizer of the event
 
 
 
 
+
+"""
 organizerAllEvents = eventbrite.get_event()			#organizer of the id
 print (organizerAllEvents['organizer.id'])
 
@@ -38,10 +42,10 @@ print (eventName['datetime-tz'])
 eventLocation = eventbrite.get_venue()				#event address 
 print (eventLocation['address'])
 
+
+
 eventAttendees = eventbrite.get_order()				#list of event attendees
 print (eventAttendees['attendee'])
-
-
 
 
 #attendee details 
