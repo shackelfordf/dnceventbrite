@@ -1,33 +1,52 @@
 from eventbrite import Eventbrite  
-eventbrite = Eventbrite ('F7T2P7A27KSJCPDD6RHL')
+#eventbrite = Eventbrite ('F7T2P7A27KSJCPDD6RHL')
+eventbrite = Eventbrite ('BGRKOZMNI6NQRUNPD6BZ')
 
 #event details
-eventName = eventbrite.get_event()
-print (eventName['multipart-text']) 
 
-eventOrganizer = eventbrite.get_event()
-print (eventOrganizer['organizer']) 
+user = eventbrite.get_user()					#name of the eventbrite user 
+print user
 
-eventUrl = eventbrite.get_event()
-print (eventUrl ['url'])
+userId = user['id']
+print userId
 
-eventDate = eventbrite.get_event()
+userEvents = '/users/'+ userId + '/owned_events/'
+print userEvents
+
+print eventbrite.get(userEvents)
+
+
+eventName = userEvents['multipart-text'] 		#event name
+
+eventDate = eventbrite['datetime-tz']			#event time 
+
+eventOrganizer = userEvents['organizer']		#organizer of the event
+
+eventUrl = eventbrite['url']					#event posting url 
+
+
+
+
+organizerAllEvents = eventbrite.get_event()			#organizer of the id
+print (organizerAllEvents['organizer.id'])
+
+
+
+eventDate = eventbrite.get_event()					#event time 
 print (eventName['datetime-tz']) 
 
-eventLocation = eventbrite.get_venue()
+eventLocation = eventbrite.get_venue()				#event address 
 print (eventLocation['address'])
 
-
+eventAttendees = eventbrite.get_order()				#list of event attendees
+print (eventAttendees['attendee'])
 
 
 
 
 #attendee details 
-attendeeFirstName =  eventbrite.get_attendee()
-print (attendeeFirstName['first_name'])
-
-attendeeLastName =  eventbrite.get_attendee()
-print (attendeeLastName['last_name'])
+attendeeName =  eventbrite.get_attendee()		#attendee name 
+print (attendeeFirstName['name'])
 
 attendeeEmail = eventbrite.get_attendee()
 print (attendeeFirstName['email'])
@@ -42,7 +61,11 @@ attendeeEvent = eventbrite.get_attendee()
 print (attendeeEvent['event_id'])
 
 
+
+
 #price details 
+
+"""
 
 
 

@@ -1,4 +1,0 @@
-$(document).keypress(btn-primary){
-	
-
-
