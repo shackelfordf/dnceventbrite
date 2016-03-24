@@ -16,6 +16,8 @@ userEvents = '/users/'+ userId + '/owned_events/'
 print eventbrite.get(userEvents)
 
 
+GET THE EVENT ID 
+
 eventName = userEvents['multipart-text'] 			#event name
 
 eventOrganizer = userEvents['organizer']			#organizer of the event
