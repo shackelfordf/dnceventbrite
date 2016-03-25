@@ -16,3 +16,5 @@ for (i = 0; i < sURLVariables.length; i++) {
 };
 var client_id = getUrlParameter('client_id');
 });
+
+console.log client_id
